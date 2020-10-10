@@ -2,8 +2,7 @@
 /workspace.xml
 .idea
 secret.py
-static
-templates
+
 migrations
 
 # Byte-compiled / optimized / DLL files
