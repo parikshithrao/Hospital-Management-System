@@ -1,71 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hospital Management System</title>
-    <meta charset="utf-8">
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-</head>
-<nav  class="navbar navbar-expand-lg bg-primary navbar-dark">
-<a class = "navbar-brand" href = "#">Hospital Management System</a>
-
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  margin: 0;
+body
+
+{
   font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: blue;
+ {
+  box-sizing: border-box;
 }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+/* Add padding to containers */
+.container {
+  text-align:center;
+  background-color: white;
 }
 
-.topnav a:hover {
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
-  color: blue;
+  outline: none;
 }
 
-.topnav a.active {
-  background-color: blue;
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: black;
   color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
 }
 </style>
 </head>
 <body>
 
-<div class="topnav">
-  <a class="active" href="<button onclick="">Home</a>
 
-  <a href="#about">About</a>
-  <a href="#Contact">Contact Us</a>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Hospital Management System</a>
+    </div>
+    <ul class="nav navbar-nav">
+
+      <li><a href="#">Contact</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+
 </div>
+<div action="/action_page.php">
+  <div class="container">
 
 
-<div style="padding-left:16px">
+
+    <input type="text" placeholder="Enter Username" name="username" id="username" required>
 
 
-</div>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+
+
+
+    <button type="submit" class="registerbtn">Login</button>
+  </div>
+
+  <div class="container signin">
+
+  </div>
+
+</form>
+
+
+
 
 </body>
 
-</nav>
 
 </html>
