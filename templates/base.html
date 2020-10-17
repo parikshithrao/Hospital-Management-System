@@ -73,6 +73,7 @@ a {
   background-color: #f1f1f1;
   text-align: center;
 }
+
 </style>
 </head>
 <body>
@@ -91,11 +92,12 @@ a {
   </div>
 </nav>
 
+
 <div class="container">
 
 
 </div>
-<div action="/action_page.php">
+<div>
   <div class="container">
 
 
@@ -108,14 +110,17 @@ a {
 
 
 
-    <button type="submit" class="registerbtn">Login</button>
+    <button  onclick = "register()" type="submit" class="registerbtn">Login</button>
+
+
   </div>
 
   <div class="container signin">
 
   </div>
 
-</form>
+</div>
+
 
 
 
@@ -123,4 +128,17 @@ a {
 </body>
 
 
+
+<div>
+
+
+</div>
+
 </html>
+ <script>
+      function register()
+      {
+
+        window.location.href="api/home/";
+      }
+    </script>
