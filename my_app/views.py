@@ -8,6 +8,6 @@ def home(request):
 
 
 def pari(request):
-    return render(request,'base.html')
+    return render(request,'index.html')
 
 
