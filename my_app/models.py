@@ -30,3 +30,18 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
+
+class Doctor(AbstractBaseUser):
+
+    is_staff = models.BooleanField(default=False)
+    fname = models.CharField(max_length=150)
+    lname = models.CharField(max_length=150)
+    gender = models.CharField(max_length=150)
+    email = models.EmailField(max_length=150,verbose_name = 'email address',unique=True)
+    password = models.CharField(max_length=150)
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+    objects = UserManager()
+
+
+
