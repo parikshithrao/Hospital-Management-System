@@ -21,4 +21,5 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url('', include('my_app.urls')),
 
+
 ]

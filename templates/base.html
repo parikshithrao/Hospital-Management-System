@@ -131,6 +131,9 @@ hr {
   <a class="active" href="#home">Hospital Management System</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
+    {% if user.is_superuser %}
+            <a href="adddoc" >Add Doctor</a>
+    {% endif %}
   <div class="login-container">
     <form action="/action_page.php">
       <input type="text" placeholder="Username" name="username">
@@ -148,9 +151,11 @@ hr {
   <div class="container" >
   <left>  <h1>Register</h1>  </left>
   <hr>
-  <label> Name </label><br>
-<input type="text" name="Name" placeholder= "Name" size="15" required />
+  <label> First Name :</label><br>
+<input type="text" name=" First Name" placeholder= " First Name" size="15" required /><br>
 
+  <label> Last Name :</label><br>
+<input type="text" name=" Last Name" placeholder= " Last Name" size="15" required />
 <label>
     <br>
 Gender :
@@ -160,11 +165,12 @@ Gender :
 <input type="radio" value="Other" name="gender"> Other
 <br>
 
-
-    <label><b>Password</b></label><br>
+    <label> Email :</label>
+      <input type="email" name="email" placeholder="Email" size = "15" required><br>
+    <label><b>Password :</b></label><br>
     <input type="password" placeholder="Enter Password" name="psw" required><br>
 
-    <label><b>Re-type Password</b></label><br>
+    <label><b>Re-type Password :</b></label><br>
     <input type="password" placeholder="Retype Password" name="psw-repeat" required>
     <button type="submit" class="registerbtn">Register</button>
   </div>

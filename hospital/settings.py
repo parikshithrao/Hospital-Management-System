@@ -80,10 +80,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': dbname,
+<<<<<<< HEAD
         'PASSWORD': dbpassword,
         'USER': dbuser,
         'HOST': dbhost,
 
+=======
+        'USER': dbuser,
+        'PASSWORD': dbpassword,
+        'HOST': dbhost,
+>>>>>>> 37bf7b402d4497a74d7064d8657ec2d8c861f865
     }
 }
 
@@ -128,3 +134,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = mail # Your Gmail Account
+EMAIL_HOST_PASSWORD = gpassword # Gmail password

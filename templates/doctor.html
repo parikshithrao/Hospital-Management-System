@@ -1,0 +1,22 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form action="adddoc" method="post">
+        {% csrf_token %}
+      <input type="text" placeholder="email" name="email"><br><br>
+      <input type="text" placeholder="Doctor Name" name="Dname"><br><br>
+        <button type="submit"   >Add</button>
+     {% for message in messages %}
+        {{message}}
+     {% endfor %}
+    </form>
+</body>
+</html>
