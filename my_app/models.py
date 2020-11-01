@@ -43,6 +43,7 @@ class Doctor(AbstractBaseUser):
     REQUIRED_FIELDS = []
     objects = UserManager()
 
+
     def has_module_perms(self, app_label):
         """Does the user have permissions to view the app `app_label`?"""
         # Simplest possible answer: Yes, always
@@ -55,3 +56,9 @@ class Doctor(AbstractBaseUser):
 
     def __str__(self):
         return self.fname
+
+class DoctorRegister(models.Model):
+    doctor_name = models.CharField(max_length=150)
+    doctor_email = models.EmailField(max_length=150,verbose_name = 'email address',unique=True)
+    date_time = models.DateTimeField(auto_now_add=True)
+    confirmation_code = models.CharField(max_length=20)
