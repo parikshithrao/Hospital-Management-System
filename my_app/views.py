@@ -6,7 +6,7 @@ import random
 
 # Create your views here.
 from django.template.loader import render_to_string
-
+from .models import *
 from hospital.settings import EMAIL_HOST_USER
 
 
@@ -26,6 +26,13 @@ def adddoc(request):
         doctor_name = request.POST['Dname']
         code = random_num()
         print(code)
+
+        doctor = DoctorRegister()
+        doctor.doctor_name = doctor_name
+        doctor.doctor_email = email
+        doctor.confirmation_code = code
+        doctor.save()
+
         subject = "please register your details "
         to = [email]
         from_email = EMAIL_HOST_USER
@@ -39,7 +46,8 @@ def adddoc(request):
 
         msg.content_subtype = 'html'
         msg.send()
-        messages.info(request,'success')
+
+        messages.info(request,'Added Successfully')
 
         return render(request, 'doctor.html')
     else:
