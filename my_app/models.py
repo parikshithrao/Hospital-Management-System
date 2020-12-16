@@ -3,11 +3,11 @@ from django.core.exceptions import ValidationError
 from django.db import models
 
 # Create your models here.
-<<<<<<< HEAD
+
 class test(models.Model):
     name = models.CharField(max_length=15)
     usn =  models.CharField(max_length=12)
-=======
+
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None):
@@ -67,4 +67,4 @@ class DoctorRegister(models.Model):
     doctor_email = models.EmailField(max_length=150,verbose_name = 'email address',unique=True)
     date_time = models.DateTimeField(auto_now_add=True)
     confirmation_code = models.CharField(max_length=20)
->>>>>>> 37bf7b402d4497a74d7064d8657ec2d8c861f865
+

@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from secret import *
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,16 +81,12 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': dbname,
-<<<<<<< HEAD
         'PASSWORD': dbpassword,
         'USER': dbuser,
         'HOST': dbhost,
+        'USER': dbuser,
 
-=======
-        'USER': dbuser,
-        'PASSWORD': dbpassword,
-        'HOST': dbhost,
->>>>>>> 37bf7b402d4497a74d7064d8657ec2d8c861f865
+
     }
 }
 
