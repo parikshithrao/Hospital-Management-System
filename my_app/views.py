@@ -11,7 +11,7 @@ from hospital.settings import EMAIL_HOST_USER
 
 
 def home(request):
-    return render(request,'home.html')
+    return render(request,'base.html')
 
 def random_num():
     rnum = random.randint(100000,999999) #generates random 6 digt number
