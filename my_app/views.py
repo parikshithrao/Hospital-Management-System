@@ -1,11 +1,13 @@
 from django.contrib import messages
 from django.core.mail import EmailMessage
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 import random
 
 # Create your views here.
 from django.template.loader import render_to_string
+from django.urls import reverse
+
 from .models import *
 from hospital.settings import EMAIL_HOST_USER
 
@@ -25,13 +27,14 @@ def adddoc(request):
         email = request.POST['email']
         doctor_name = request.POST['Dname']
         code = random_num()
+        print(email)
         print(code)
 
-        doctor = DoctorRegister()
-        doctor.doctor_name = doctor_name
-        doctor.doctor_email = email
-        doctor.confirmation_code = code
-        doctor.save()
+        if DoctorRegister.objects.filter(doctor_email = email).exists() :
+            messages.info(request, "email already exists")
+            return HttpResponseRedirect(reverse("adddoc"))
+
+
 
         subject = "please register your details "
         to = [email]
@@ -46,6 +49,12 @@ def adddoc(request):
 
         msg.content_subtype = 'html'
         msg.send()
+
+        doctor = DoctorRegister()
+        doctor.doctor_name = doctor_name
+        doctor.doctor_email = email
+        doctor.confirmation_code = code
+        doctor.save()
 
         messages.info(request,'Added Successfully')
 
