@@ -68,3 +68,22 @@ class DoctorRegister(models.Model):
     date_time = models.DateTimeField(auto_now_add=True)
     confirmation_code = models.CharField(max_length=20)
 
+class Appointment(models.Model):
+    pname = models.CharField(max_length=150)
+    pmail = models.EmailField(max_length=150, verbose_name='email address', unique=True)
+    date_time = models.DateTimeField(auto_now_add=True)
+    dep_choice = (
+        ('general health', 'Genral Health'),
+        ('cardiology', 'Cardiology'),
+        ('dental', 'Dental'),
+        ('medical research', 'Medical Research'),
+
+    )
+    doc_choice = (
+        ('keerthi', 'Keerthi'),
+    )
+
+
+    dep = models.CharField(max_length=30, choices=dep_choice, default='general health')
+    pnum = models.IntegerField(max_length=10)
+    doc = models.CharField(max_length=30, choices=doc_choice, default='keerthi')
