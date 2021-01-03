@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 
-from my_app.models import DoctorRegister
+from my_app.models import Doctor
 
 
 class Command(BaseCommand):
@@ -20,7 +20,7 @@ class Command(BaseCommand):
         password = kwargs['password']
         email = kwargs['email']
         first_name = kwargs['first_name']
-        user = DoctorRegister()
+        user = Doctor
         user.email = email
         user.is_staff = True
         user.is_active = True
