@@ -80,7 +80,7 @@ class Appointment(models.Model):
 
     )
     doc_choice = (
-        ('keerthi', 'Keerthi'),
+        ('keerthi', 'parikshith'),
     )
 
 
