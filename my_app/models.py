@@ -85,5 +85,5 @@ class Appointment(models.Model):
 
 
     dep = models.CharField(max_length=30, choices=dep_choice, default='general health')
-    pnum = models.IntegerField(max_length=10)
+    pnum = models.IntegerField()
     doc = models.CharField(max_length=30, choices=doc_choice, default='keerthi')
