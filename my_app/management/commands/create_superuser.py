@@ -21,11 +21,11 @@ class Command(BaseCommand):
         email = kwargs['email']
         first_name = kwargs['first_name']
         user = DoctorRegister()
-        user.phone = phone
+        user.email = email
         user.is_staff = True
         user.is_active = True
         user.set_password(password)
-        user.email = email
+        user.phone = phone
         user.first_name = first_name
         user.save()
 
